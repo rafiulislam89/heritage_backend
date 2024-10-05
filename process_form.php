@@ -1,11 +1,11 @@
 <?php
-// process_form.php
 
-// Database connection (modify with your credentials)
+
+
 $servername = "localhost";
-$username = "root"; // default for XAMPP
+$username = "root"; 
 $password = ""; // default for XAMPP
-$dbname = "real_estate"; // your database name
+$dbname = "real_estate"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -14,13 +14,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve form data
+
 $search = isset($_POST['search']) ? $_POST['search'] : '';
 $location = isset($_POST['location']) ? $_POST['location'] : '';
 $property_type = isset($_POST['property_type']) ? $_POST['property_type'] : '';
 $budget = isset($_POST['budget']) ? $_POST['budget'] : '';
 
-// Prepare the SQL statement (you might want to use prepared statements for security)
+
 $sql = "SELECT * FROM properties WHERE 1=1";
 
 if (!empty($search)) {
@@ -36,8 +36,7 @@ if (!empty($property_type)) {
 }
 
 if (!empty($budget)) {
-    $sql .= " AND price <= " . (float)$budget; // Assuming price is stored as a number
-}
+    $sql .= " AND price <= " . (float)$budget; 
 
 // Execute the query
 $result = $conn->query($sql);
