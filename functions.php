@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "real_state.fb";
+$dbname = real_estate";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
