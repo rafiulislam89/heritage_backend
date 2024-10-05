@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description = $_POST['description'];
     $location = $_POST['location'];
     $price = $_POST['price'];
-    $image_url = $_POST['image_url']; // You may handle image uploads separately
+    $image_url = $_POST['image_url']; 
 
     try {
         $stmt = $pdo->prepare("INSERT INTO properties (title, description, location, price, image_url) VALUES (?, ?, ?, ?, ?)");
